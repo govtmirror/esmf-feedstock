@@ -20,6 +20,7 @@ make install
 ln -s ${PREFIX}/bin/binO/*.default/* ${PREFIX}/bin
 ln -s ${PREFIX}/lib/libO/*.default/*.a ${PREFIX}/lib
 ln -s ${PREFIX}/mod/modO/*.default/* ${PREFIX}/mod
+
 if [[ $(uname) == Darwin ]]; then
 ln -s ${PREFIX}/lib/libO/*.default/*.dylib ${PREFIX}/lib
 else
