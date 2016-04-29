@@ -1,9 +1,5 @@
 #!/bin/bash
 
-if [[ $(uname) == Linux ]]; then
-yum install -y gcc-gfortran
-fi
-
 export ESMF_DIR=$(pwd)
 export ESMF_INSTALL_PREFIX=${PREFIX}
 export ESMF_INSTALL_BINDIR=${PREFIX}/bin

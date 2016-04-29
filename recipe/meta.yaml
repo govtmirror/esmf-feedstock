@@ -7,14 +7,16 @@ source:
     git_tag: ESMF_7_0_0
 
 build:
-    number: 1
+    number: 2
     skip: True # [win]
 
 requirements:
     build:
-        - netcdf-fortran
+        - gcc
+        - netcdf-fortran 4.4*
     run:
-        - netcdf-fortran
+        - netcdf-fortran 4.4*
+        - libgcc
 
 test:
     commands:
