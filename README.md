@@ -5,7 +5,7 @@ Home: http://www.earthsystemmodeling.org/
 
 Package license: The University of Illinois/NCSA Open Source License (NCSA)
 
-Feedstock license: BSD
+Feedstock license: BSD 3-Clause
 
 Summary: The Earth System Modeling Framework (ESMF) is software for building and coupling weather, climate, and related models.
 
