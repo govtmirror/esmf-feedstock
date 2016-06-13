@@ -14,6 +14,7 @@ requirements:
     build:
         - gcc
         - netcdf-fortran 4.4*
+        - perl
     run:
         - netcdf-fortran 4.4*
         - libgcc
@@ -21,6 +22,7 @@ requirements:
 test:
     commands:
         - ESMF_Info
+        - ESMF_RegridWeightGen --help
 
 about:
     home: http://www.earthsystemmodeling.org/
