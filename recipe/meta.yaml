@@ -14,6 +14,7 @@ requirements:
     build:
         - gcc
         - netcdf-fortran 4.4*
+        - perl
     run:
         - netcdf-fortran 4.4*
         - libgcc
