@@ -7,16 +7,20 @@ source:
     git_tag: ESMF_7_0_0
 
 build:
-    number: 2
+    number: 3
     skip: True  # [win]
 
 requirements:
     build:
         - gcc
         - netcdf-fortran 4.4*
+        - openmpi # [osx]
+        - mpich2 # [linux]
     run:
         - netcdf-fortran 4.4*
         - libgcc
+        - openmpi # [osx]
+        - mpich2 # [linux]
 
 test:
     commands:
