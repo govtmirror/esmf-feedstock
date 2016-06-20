@@ -13,6 +13,6 @@ export ESMF_NETCDF_LIBPATH=${PREFIX}/lib
 
 export ESMF_COMM=mpiuni
 
-make -j ${CPU_COUNT}
+make
 make check
 make install

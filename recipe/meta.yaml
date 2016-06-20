@@ -1,23 +1,29 @@
+{% set version = "7.0.0" %}
+{% set ver = version.replace(".", "_") %}
+
 package:
     name: esmf
-    version: 7.0.0
+    version: {{ version }}
 
 source:
-    git_url: git://git.code.sf.net/p/esmf/esmf
-    git_tag: ESMF_7_0_0
+    fn: esmf-{{ version }}.tar.gz
+    url: http://downloads.sourceforge.net/project/esmf/ESMF_{{ ver }}/esmf_{{ ver }}_src.tar.gz
+    sha256: b2ac25f78c4bded006360230bd229953909f2a9f9e71b732833c240edc7707b1
 
 build:
-    number: 2
+    number: 3
     skip: True  # [win]
 
 requirements:
     build:
-        - gcc
-        - netcdf-fortran 4.4*
+        - netcdf-fortran 4.4.*
         - perl
+        - gcc
+        - isl 0.12.*
     run:
-        - netcdf-fortran 4.4*
+        - netcdf-fortran 4.4.*
         - libgcc
+        - isl 0.12.*
 
 test:
     commands:
