@@ -34,12 +34,15 @@ install:
       
 
 script:
-#  - conda build ./recipe
-    - uname
-    - conda install --yes -c conda-forge esmf
-    - ESMF_Info
-    - which ESMF_RegridWeightGen
+  - conda build ./recipe
+#  - conda install --yes -c conda-forge esmf
+#  - ESMF_Info
+#  - which ESMF_RegridWeightGen
 
-#after_success:
+after_success:
+  - conda create -n test-esmf --use-local esmf
+  - source activate test-esmf
+  - which ESMF_Info
+  - ESMF_Info
 #  - ./ci_support/upload_or_check_non_existence.py ./recipe conda-forge --channel=main
 
