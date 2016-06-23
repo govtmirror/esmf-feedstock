@@ -14,5 +14,5 @@ export ESMF_NETCDF_LIBPATH=${PREFIX}/lib
 export ESMF_COMM=mpiuni
 
 make
-make check
+#make check
 make install

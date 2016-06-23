@@ -40,7 +40,7 @@ script:
 #  - which ESMF_RegridWeightGen
 
 after_success:
-  - conda create -n test-esmf --use-local esmf
+  - conda create --yes -n test-esmf --use-local esmf
   - source activate test-esmf
   - which ESMF_Info
   - ESMF_Info
