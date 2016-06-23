@@ -16,3 +16,5 @@ export ESMF_COMM=mpiuni
 make
 #make check
 make install
+otool -L ${PREFIX}/bin/ESMF_Info
+exit 1
