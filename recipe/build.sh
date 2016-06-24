@@ -17,4 +17,5 @@ make
 #make check
 make install
 otool -L ${PREFIX}/bin/ESMF_Info
-exit 1
+#ldd ${PREFIX}/bin/ESMF_Info
+#exit 1
