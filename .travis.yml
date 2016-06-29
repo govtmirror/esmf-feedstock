@@ -34,18 +34,23 @@ install:
       
 
 script:
-  - conda build ./recipe
-#  - conda install --yes -c conda-forge esmf
-#  - ESMF_Info
+#  - conda build ./recipe
+  - conda create -n esmf --yes -c conda-forge esmf
+  - find /Users/travis/miniconda3/envs/esmf -name "*libesmf*"
+  - ESMF_LIB_PATH=/Users/travis/miniconda3/envs/esmf/lib/libesmf.dylib
+  - ESMF_INFO_PATH=/Users/travis/miniconda3/envs/esmf/bin/ESMF_Info
+  - ESMF_Info
+  - otool -D ${ESMF_INFO_PATH}
+  - otool -L ${ESMF_INFO_PATH}
 #  - which ESMF_RegridWeightGen
 
-after_success:
-  - conda create --yes -n test-esmf --use-local esmf
-  - source activate test-esmf
-  - which ESMF_Info
-  - ESMF_Info
-  - otool -L `which ESMF_Info`
-  - rm -r /Users/travis/miniconda3/conda-bld/work/esmf
-  - ESMF_Info
+#after_success:
+#  - conda create --yes -n test-esmf --use-local esmf
+#  - source activate test-esmf
+#  - which ESMF_Info
+#  - ESMF_Info
+#  - otool -L `which ESMF_Info`
+#  - rm -r /Users/travis/miniconda3/conda-bld/work/esmf
+#  - ESMF_Info
 #  - ./ci_support/upload_or_check_non_existence.py ./recipe conda-forge --channel=main
 
