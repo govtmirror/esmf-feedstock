@@ -31,17 +31,21 @@ install:
       conda update --yes conda
       conda install --yes conda-build=1.20.0 jinja2 anaconda-client
       conda config --add channels conda-forge
-      
 
 script:
+# TODO: try modifying libesmf library name/id
 #  - conda build ./recipe
   - conda create -n esmf --yes -c conda-forge esmf
+  - source activate esmf
   - find /Users/travis/miniconda3/envs/esmf -name "*libesmf*"
   - ESMF_LIB_PATH=/Users/travis/miniconda3/envs/esmf/lib/libesmf.dylib
+  - ESMF_ORIGINAL_LIB_PATH=/Users/travis/miniconda3/conda-bld/work/esmf/lib/libO/Darwin.gfortran.64.mpiuni.default/libesmf.dylib
   - ESMF_INFO_PATH=/Users/travis/miniconda3/envs/esmf/bin/ESMF_Info
   - ESMF_Info
   - otool -D ${ESMF_INFO_PATH}
   - otool -L ${ESMF_INFO_PATH}
+  - install_name_tool -change ${ESMF_ORIGINAL_LIB_PATH} ${ESMF_LIB_PATH} `which ESMF_Info`
+#  - install_name_tool -change libbz2.1.0.2.dylib @executable_path/../Frameworks/libbz2.1.0.2.dylib MyFunBinary
 #  - which ESMF_RegridWeightGen
 
 #after_success:
