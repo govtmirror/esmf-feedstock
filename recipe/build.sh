@@ -27,7 +27,7 @@ _ESMF_LIB_PATH=${PREFIX}/lib/libesmf.dylib
 _CURRENT_DIRECTORY=`pwd`
 _ESMF_ORIGINAL_LIB_PATH=`find ${_CURRENT_DIRECTORY}/lib -name '*libesmf.dylib'`
 _ESMF_INFO_PATH=${PREFIX}/bin/ESMF_Info
-ESMF_Info
+#ESMF_Info
 #otool -D ${ESMF_LIB_PATH}
 #otool -L ${ESMF_INFO_PATH}
 install_name_tool -change ${_ESMF_ORIGINAL_LIB_PATH} ${_ESMF_LIB_PATH} ${_ESMF_INFO_PATH}
