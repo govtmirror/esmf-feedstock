@@ -22,13 +22,13 @@ make install
 #  - conda create -n esmf --yes -c conda-forge esmf
 #  - source activate esmf
 #  - find /Users/travis/miniconda3/envs/esmf -name "*libesmf*"
-_ESMF_LIB_PATH=${PREFIX}/lib/libesmf.dylib
+ESMF_LIB_PATH=${PREFIX}/lib/libesmf.dylib
 #_ESMF_ORIGINAL_LIB_PATH=/Users/travis/miniconda3/conda-bld/work/esmf/lib/libO/Darwin.gfortran.64.mpiuni.default/libesmf.dylib
-_CURRENT_DIRECTORY=`pwd`
-_ESMF_ORIGINAL_LIB_PATH=/Users/travis/miniconda3/conda-bld/work/esmf/lib/libO/Darwin.gfortran.64.mpiuni.default/libesmf.dylib
-_ESMF_INFO_PATH=${PREFIX}/bin/ESMF_Info
+#_CURRENT_DIRECTORY=`pwd`
+ESMF_ORIGINAL_LIB_PATH=/Users/travis/miniconda3/conda-bld/work/esmf/lib/libO/Darwin.gfortran.64.mpiuni.default/libesmf.dylib
+ESMF_INFO_PATH=${PREFIX}/bin/ESMF_Info
 #ESMF_Info
 #otool -D ${ESMF_LIB_PATH}
 #otool -L ${ESMF_INFO_PATH}
-install_name_tool -change ${_ESMF_ORIGINAL_LIB_PATH} ${_ESMF_LIB_PATH} ${_ESMF_INFO_PATH}
+install_name_tool -change ${ESMF_ORIGINAL_LIB_PATH} ${ESMF_LIB_PATH} ${ESMF_INFO_PATH}
 #  - ESMF_Info
