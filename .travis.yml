@@ -27,6 +27,6 @@ install:
 
 script:
   - conda build ./recipe
-  - conda create -n esmf --use-local esmf
+  - conda create --yes -n esmf --use-local esmf
   - source activate esmf
   - otool -L `which ESMF_Info`
