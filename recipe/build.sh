@@ -11,6 +11,7 @@ export ESMF_NETCDF="split"
 export ESMF_NETCDF_INCLUDE=${PREFIX}/include
 export ESMF_NETCDF_LIBPATH=${PREFIX}/lib
 
+exprot ESMF_CXXLIBLIBS=-lmpifort
 if [ "$(uname)" == "Darwin" ]; then
     export ESMF_COMM=mpiuni
 #    export ESMF_COMM=openmpi
