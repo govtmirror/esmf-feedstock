@@ -18,13 +18,13 @@ requirements:
     build:
         - netcdf-fortran 4.4.*
         - perl
-        - openmpi  # [osx]
+#        - openmpi  # [osx]
         - mpich  # [linux]
         - gcc
     run:
         - netcdf-fortran 4.4.*
         - libgcc
-        - openmpi  # [osx]
+#        - openmpi  # [osx]
         - mpich  # [linux]
 
 test:
